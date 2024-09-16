@@ -5,14 +5,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="shortcut icon" href="assets/favicon.png" type="image/x-icon" />
     <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/dashboard.css" />
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
       rel="stylesheet"
       integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
       crossorigin="anonymous"
     />
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <title>Educa - Dashboard</title>
   </head>
+
   <body>
     <nav id="sidebar">
       <ul class="p-0">
@@ -118,6 +121,280 @@
         </li>
       </ul>
     </nav>
+
+    <!-- Main Content -->
+    <div class="mt-5 me-4 justify-content-center">
+
+      <!-- Header -->
+      <div class="d-flex justify-content-between me-3">
+        <h1 class="heading">Admin Dashboard</h1>
+        <div>
+          <svg
+            class="me-1"
+            xmlns="http://www.w3.org/2000/svg"
+            x="0px"
+            y="0px"
+            width="35"
+            height="35"
+            viewBox="0 0 64 64"
+          >
+            <path
+              d="M 32 10 C 29.662 10 28.306672 11.604938 27.638672 13.085938 C 24.030672 13.809937 17.737984 16.956187 16.958984 24.742188 C 16.665984 29.334188 16.1185 37.883781 13.0625 39.300781 C 12.8505 39.398781 12.655234 39.533219 12.490234 39.699219 C 12.235234 39.954219 10 42.294 10 46 C 10 47.104 10.896 48 12 48 L 25.257812 48 C 25.652433 51.372928 28.522752 54 32 54 C 35.477248 54 38.347567 51.372928 38.742188 48 L 52 48 C 53.104 48 54 47.104 54 46 C 54 42.294 51.764766 39.954219 51.509766 39.699219 C 51.344766 39.534219 51.1495 39.397828 50.9375 39.298828 C 47.8825 37.881828 47.333203 29.333922 47.033203 24.669922 C 46.258203 16.945922 39.966375 13.806984 36.359375 13.083984 C 35.692375 11.603984 34.338 10 32 10 z M 32 14 C 32.603 14 32.766719 14.619859 32.886719 15.255859 C 33.063719 16.190859 33.884422 16.914062 34.857422 16.914062 C 34.931422 16.914063 42.311828 17.650047 43.048828 24.998047 C 43.557828 32.932047 44.389891 40.250797 48.837891 42.716797 C 49.024891 42.956797 49.333937 43.401 49.585938 44 L 14.414062 44 C 14.667063 43.397 14.976203 42.95375 15.158203 42.71875 C 19.609203 40.25475 20.442312 32.935313 20.945312 25.070312 C 21.688313 17.650312 29.068578 16.914062 29.142578 16.914062 C 30.099578 16.914062 30.934375 16.156391 31.109375 15.275391 C 31.232375 14.660391 31.396 14 32 14 z M 29.335938 48 L 34.664062 48 C 34.319789 49.152328 33.262739 50 32 50 C 30.737261 50 29.680211 49.152328 29.335938 48 z"
+            ></path>
+          </svg>
+          <img
+            src="assets/images/profile.png"
+            alt="profile"
+            class="profile-photo rounded-circle"
+            width="30"
+            height="30"
+          />
+        </div>
+      </div>
+
+      <!-- Path -->
+      <p class="text-muted text-end me-3">Home/Dashboard</p>
+
+      <!-- Cards -->
+      <div class="row mt-5 d-flex justify-content-center">
+        <!-- 1st Card -->
+        <div class="col-lg-3 col-md-6 col-sm-12 mb-3">
+          <div class="card highlight-card">
+            <div class="card-body">
+              <div class="row d-flex">
+                <div class="col-8">
+                  <h5 class="card-title text-muted">Today</h5>
+                  <p class="card-text" id="today-count">14</p>
+                </div>
+                <div class="col-4 align-content-center">
+                  <img
+                    src="assets/icons/today.png"
+                    alt="Today"
+                    class="col-lg-11 col-md-10 col-sm-11"
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 2nd Card -->
+        <div class="col-lg-3 col-md-6 col-sm-12 mb-3">
+          <div class="card highlight-card">
+            <div class="card-body">
+              <div class="row d-flex">
+                <div class="col-8">
+                  <h5 class="card-title text-muted">Students</h5>
+                  <p class="card-text" id="student-count">237</p>
+                </div>
+                <div class="col-4 align-content-center">
+                  <img
+                    src="assets/icons/students.png"
+                    alt="Students"
+                    class="col-lg-11 col-md-10 col-sm-11"
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 3rd Card -->
+        <div class="col-lg-3 col-md-6 col-sm-12 mb-3">
+          <div class="card highlight-card">
+            <div class="card-body">
+              <div class="row d-flex">
+                <div class="col-8">
+                  <h5 class="card-title text-muted">Teachers</h5>
+                  <p class="card-text" id="teacher-count">12</p>
+                </div>
+                <div class="col-4 align-content-center">
+                  <img
+                    src="assets/icons/teacher.png"
+                    alt="Teachers"
+                    class="col-lg-11 col-md-10 col-sm-11"
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 4th Card -->
+        <div class="col-lg-3 col-md-6 col-sm-12 mb-3">
+          <div class="card highlight-card">
+            <div class="card-body">
+              <div class="row d-flex">
+                <div class="col-8">
+                  <h5 class="card-title text-muted">Events</h5>
+                  <p class="card-text" id="event-count">5</p>
+                </div>
+                <div class="col-4 align-content-center">
+                  <img
+                    src="assets/icons/events.png"
+                    alt="Events"
+                    class="col-lg-11 col-md-10 col-sm-11"
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Line Chart -->
+      <div class="row mt-5 d-flex justify-content-center">
+        <div class="col-lg-6 col-md-12 col-sm-12 mb-3">
+          <div class="card information-card">
+            <div class="card-body">
+              <h5 class="information-title mb-4">Student Attendance</h5>
+              <canvas id="studentChart"></canvas>
+            </div>
+          </div>
+        </div>
+
+        <!-- Polar Chart -->
+        <div class="col-lg-6 col-md-11 col-sm-11">
+          <div class="card information-card">
+            <div class="card-body">
+              <div class="row">
+                <h5 class="card-title information-title">Subjects</h5>
+              </div>
+              <div class="row justify-content-center">
+                <div id="chartContainer">
+                  <canvas id="barChart"></canvas>
+                </div>
+              </div>
+              <!-- End -->
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Events -->
+      <div class="row d-flex justify-content-center mt-2">
+        <div class="col-12">
+          <div class="card information-card">
+            <div class="card-body">
+              <h5 class="card-title information-title">Events</h5>
+              <div class="blog-post blog-single-post">
+                <div class="single-post-content">
+                  <table class="events-list table-responsive">
+                    <tr>
+                      <td>
+                        <div class="event-date">
+                          <div class="event-day">20</div>
+                          <div class="event-month">SEP</div>
+                        </div>
+                      </td>
+                      <td>
+                        <b>Science Fair</b> A platform for students to showcase
+                        innovative scientific projects and experiments.
+                      </td>
+                      <td class="event-venue hidden-xs">
+                        <i class="icon-map-marker"></i>Auditorium
+                      </td>
+                      <td>
+                        <a href="#" class="btn btn-grey btn-sm event-more"
+                          >View</a
+                        >
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
+                        <div class="event-date">
+                          <div class="event-day">28</div>
+                          <div class="event-month">SEP</div>
+                        </div>
+                      </td>
+                      <td>
+                        <b>Guest Lecture</b> Artificial Intelligence: A renowned
+                        speaker shares insights on AI trends and
+                      </td>
+                      <td class="event-venue hidden-xs">
+                        <i class="icon-map-marker"></i>Conference
+                      </td>
+
+                      <td>
+                        <a href="#" class="btn btn-grey btn-sm event-more"
+                          >View</a
+                        >
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
+                        <div class="event-date">
+                          <div class="event-day">01</div>
+                          <div class="event-month">OCT</div>
+                        </div>
+                      </td>
+                      <td>
+                        <b>Student Leadership Workshop</b> A day-long session
+                        focusing on leadership, communication, and teamwork
+                        skills.
+                      </td>
+                      <td class="event-venue hidden-xs">
+                        <i class="icon-map-marker"></i> Auditorium
+                      </td>
+
+                      <td>
+                        <a href="#" class="btn btn-grey btn-sm event-more"
+                          >View</a
+                        >
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
+                        <div class="event-date">
+                          <div class="event-day">10</div>
+                          <div class="event-month">OCT</div>
+                        </div>
+                      </td>
+                      <td>
+                        <b>Cultural Fest</b> A celebration of student diversity
+                        through music, dance, and cultural exhibitions.
+                      </td>
+                      <td class="event-venue hidden-xs">
+                        <i class="icon-map-marker"></i>Courtyard
+                      </td>
+
+                      <td>
+                        <a href="#" class="btn btn-grey btn-sm event-more"
+                          >View</a
+                        >
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
+                        <div class="event-date">
+                          <div class="event-day">29</div>
+                          <div class="event-month">OCT</div>
+                        </div>
+                      </td>
+                      <td>
+                        <b>Annual Coding Competition</b> A competitive
+                        programming event where students solve coding challenges
+                        in teams.
+                      </td>
+                      <td class="event-venue hidden-xs">
+                        <i class="icon-map-marker"></i>Labs
+                      </td>
+
+                      <td>
+                        <a href="#" class="btn btn-grey btn-sm event-more"
+                          >View</a
+                        >
+                      </td>
+                    </tr>
+                  </table>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
     <script src="js/app.js"></script>
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"

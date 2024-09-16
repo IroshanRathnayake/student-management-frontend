@@ -18,6 +18,7 @@
 html{
   font-family: var(--secondary-font);
   line-height: 1.5rem;
+  scroll-behavior: smooth;
 }
 body{
   min-height: 100vh;
@@ -33,7 +34,7 @@ body{
   height: 100vh;
   width: 250px;
   padding: 5px 1em;
-  margin-right: 5rem;
+  margin-right: 3rem;
   background-color: var(--secondary-base-clr);
   
   position: sticky;
@@ -42,6 +43,7 @@ body{
   transition: 300ms ease-in-out;
   overflow: hidden;
   text-wrap: nowrap;
+  z-index: 2;
 }
 #sidebar.close{
   padding: 5px;
@@ -93,6 +95,7 @@ body{
   font: inherit;
   cursor: pointer;
 }
+
 #sidebar svg{
   flex-shrink: 0;
   fill: var(--text-clr);
@@ -165,6 +168,21 @@ main p{
   h2, p { margin-top: 1em }
 }
 
+.heading{
+  font-family: var(--base-font);
+  font-size: 2rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+
+.card-title{
+  font-family: var(--base-font);
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+
+
 @media(max-width: 800px){
   body{
     grid-template-columns: 1fr;
@@ -234,5 +252,17 @@ main p{
         justify-content: center;
       }
     }
+  }
+
+  .card{
+    margin-left: 1rem;
+  }
+
+  .heading{
+    margin-left: 1.2rem;
+  }
+
+  .profile-photo{
+    visibility: hidden;
   }
 }
