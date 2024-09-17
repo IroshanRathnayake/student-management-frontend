@@ -1,5 +1,6 @@
 .card-text {
-  font-size: 2.3rem;
+  font-family: 'Inter', sans-serif;
+  font-size: 1.9rem;
   font-weight: 600;
 }
 
@@ -20,13 +21,13 @@
   border-radius: 20px !important;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
   /* background-color: #c2c6fd!important; */
-  background: rgb(205, 208, 255);
+  /* background: rgb(205, 208, 255);
   background: linear-gradient(
     130deg,
     rgba(205, 208, 255, 1) 0%,
     rgba(228, 230, 255, 1) 0%,
     rgba(181, 184, 255, 1) 100%
-  );
+  ); */
 }
 
 canvas {

@@ -1,139 +1,245 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link
-      rel="shortcut icon"
-      href="../assets/favicon.png"
-      type="image/x-icon"
-    />
-    <link rel="stylesheet" href="../css/style.css" />
-    <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
-      rel="stylesheet"
-      integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
-      crossorigin="anonymous"
-    />
-    <title>Educa - Add Student</title>
-  </head>
-  <body>
-    <nav id="sidebar">
-      <ul class="p-0">
-        <li class="pt-3">
-          <img
-            width="48"
-            height="48"
-            src="../assets/images/logo.png"
-            alt="logo"
-          />
-          <span class="logo">Educa.</span>
-          <button onclick="toggleSidebar()" id="toggle-btn">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              height="24px"
-              viewBox="0 -960 960 960"
-              width="24px"
-              fill="#e8eaed"
-            >
-              <path
-                d="m313-480 155 156q11 11 11.5 27.5T468-268q-11 11-28 11t-28-11L228-452q-6-6-8.5-13t-2.5-15q0-8 2.5-15t8.5-13l184-184q11-11 27.5-11.5T468-692q11 11 11 28t-11 28L313-480Zm264 0 155 156q11 11 11.5 27.5T732-268q-11 11-28 11t-28-11L492-452q-6-6-8.5-13t-2.5-15q0-8 2.5-15t8.5-13l184-184q11-11 27.5-11.5T732-692q11 11 11 28t-11 28L577-480Z"
-              />
-            </svg>
-          </button>
-        </li>
-        <li>
-          <a href="../index.html">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              height="24px"
-              viewBox="0 -960 960 960"
-              width="24px"
-              fill="#e8eaed"
-            >
-              <path
-                d="M520-640v-160q0-17 11.5-28.5T560-840h240q17 0 28.5 11.5T840-800v160q0 17-11.5 28.5T800-600H560q-17 0-28.5-11.5T520-640ZM120-480v-320q0-17 11.5-28.5T160-840h240q17 0 28.5 11.5T440-800v320q0 17-11.5 28.5T400-440H160q-17 0-28.5-11.5T120-480Zm400 320v-320q0-17 11.5-28.5T560-520h240q17 0 28.5 11.5T840-480v320q0 17-11.5 28.5T800-120H560q-17 0-28.5-11.5T520-160Zm-400 0v-160q0-17 11.5-28.5T160-360h240q17 0 28.5 11.5T440-320v160q0 17-11.5 28.5T400-120H160q-17 0-28.5-11.5T120-160Zm80-360h160v-240H200v240Zm400 320h160v-240H600v240Zm0-480h160v-80H600v80ZM200-200h160v-80H200v80Zm160-320Zm240-160Zm0 240ZM360-280Z"
-              />
-            </svg>
-            <span>Dashboard</span>
-          </a>
-        </li>
-        <li>
-          <button onclick="toggleSubMenu(this)" class="dropdown-btn">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              height="24px"
-              viewBox="0 -960 960 960"
-              width="24px"
-              fill="#e8eaed"
-            >
-              <path
-                d="M160-160q-33 0-56.5-23.5T80-240v-480q0-33 23.5-56.5T160-800h207q16 0 30.5 6t25.5 17l57 57h320q33 0 56.5 23.5T880-640v400q0 33-23.5 56.5T800-160H160Zm0-80h640v-400H447l-80-80H160v480Zm0 0v-480 480Zm400-160v40q0 17 11.5 28.5T600-320q17 0 28.5-11.5T640-360v-40h40q17 0 28.5-11.5T720-440q0-17-11.5-28.5T680-480h-40v-40q0-17-11.5-28.5T600-560q-17 0-28.5 11.5T560-520v40h-40q-17 0-28.5 11.5T480-440q0 17 11.5 28.5T520-400h40Z"
-              />
-            </svg>
-            <span>Student</span>
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              height="24px"
-              viewBox="0 -960 960 960"
-              width="24px"
-              fill="#e8eaed"
-            >
-              <path
-                d="M480-361q-8 0-15-2.5t-13-8.5L268-556q-11-11-11-28t11-28q11-11 28-11t28 11l156 156 156-156q11-11 28-11t28 11q11 11 11 28t-11 28L508-372q-6 6-13 8.5t-15 2.5Z"
-              />
-            </svg>
-          </button>
-          <ul class="sub-menu">
-            <div>
-              <li class="active"><a href="add-student.html">Add Student</a></li>
-              <li><a href="records.html">Records</a></li>
-            </div>
-          </ul>
-        </li>
-        <li>
-          <a href="calendar.html">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              height="24px"
-              viewBox="0 -960 960 960"
-              width="24px"
-              fill="#e8eaed"
-            >
-              <path
-                d="M200-80q-33 0-56.5-23.5T120-160v-560q0-33 23.5-56.5T200-800h40v-40q0-17 11.5-28.5T280-880q17 0 28.5 11.5T320-840v40h320v-40q0-17 11.5-28.5T680-880q17 0 28.5 11.5T720-840v40h40q33 0 56.5 23.5T840-720v560q0 33-23.5 56.5T760-80H200Zm0-80h560v-400H200v400Zm0-480h560v-80H200v80Zm0 0v-80 80Zm280 240q-17 0-28.5-11.5T440-440q0-17 11.5-28.5T480-480q17 0 28.5 11.5T520-440q0 17-11.5 28.5T480-400Zm-160 0q-17 0-28.5-11.5T280-440q0-17 11.5-28.5T320-480q17 0 28.5 11.5T360-440q0 17-11.5 28.5T320-400Zm320 0q-17 0-28.5-11.5T600-440q0-17 11.5-28.5T640-480q17 0 28.5 11.5T680-440q0 17-11.5 28.5T640-400ZM480-240q-17 0-28.5-11.5T440-280q0-17 11.5-28.5T480-320q17 0 28.5 11.5T520-280q0 17-11.5 28.5T480-240Zm-160 0q-17 0-28.5-11.5T280-280q0-17 11.5-28.5T320-320q17 0 28.5 11.5T360-280q0 17-11.5 28.5T320-240Zm320 0q-17 0-28.5-11.5T600-280q0-17 11.5-28.5T640-320q17 0 28.5 11.5T680-280q0 17-11.5 28.5T640-240Z"
-              />
-            </svg>
-            <span>Calendar</span>
-          </a>
-        </li>
-        <li>
-          <a href="profile.html">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              height="24px"
-              viewBox="0 -960 960 960"
-              width="24px"
-              fill="#e8eaed"
-            >
-              <path
-                d="M480-480q-66 0-113-47t-47-113q0-66 47-113t113-47q66 0 113 47t47 113q0 66-47 113t-113 47ZM160-240v-32q0-34 17.5-62.5T224-378q62-31 126-46.5T480-440q66 0 130 15.5T736-378q29 15 46.5 43.5T800-272v32q0 33-23.5 56.5T720-160H240q-33 0-56.5-23.5T160-240Zm80 0h480v-32q0-11-5.5-20T700-306q-54-27-109-40.5T480-360q-56 0-111 13.5T260-306q-9 5-14.5 14t-5.5 20v32Zm240-320q33 0 56.5-23.5T560-640q0-33-23.5-56.5T480-720q-33 0-56.5 23.5T400-640q0 33 23.5 56.5T480-560Zm0-80Zm0 400Z"
-              />
-            </svg>
-            <span>Profile</span>
-          </a>
-        </li>
-      </ul>
-    </nav>
 
-    <div class="mt-5">
-      <h1>Registration</h1>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="shortcut icon" href="../assets/favicon.png" type="image/x-icon" />
+  <link rel="stylesheet" href="../css/style.css" />
+  <link rel="stylesheet" href="../css/add-student.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous" />
+  <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+  <title>Educa - Add Student</title>
+</head>
+
+<body>
+  <nav id="sidebar">
+    <ul class="p-0">
+      <li class="pt-3">
+        <img width="48" height="48" src="../assets/images/logo.png" alt="logo" />
+        <span class="logo">Educa.</span>
+        <button onclick="toggleSidebar()" id="toggle-btn">
+          <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e8eaed">
+            <path
+              d="m313-480 155 156q11 11 11.5 27.5T468-268q-11 11-28 11t-28-11L228-452q-6-6-8.5-13t-2.5-15q0-8 2.5-15t8.5-13l184-184q11-11 27.5-11.5T468-692q11 11 11 28t-11 28L313-480Zm264 0 155 156q11 11 11.5 27.5T732-268q-11 11-28 11t-28-11L492-452q-6-6-8.5-13t-2.5-15q0-8 2.5-15t8.5-13l184-184q11-11 27.5-11.5T732-692q11 11 11 28t-11 28L577-480Z" />
+          </svg>
+        </button>
+      </li>
+      <li>
+        <a href="../index.html">
+          <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e8eaed">
+            <path
+              d="M520-640v-160q0-17 11.5-28.5T560-840h240q17 0 28.5 11.5T840-800v160q0 17-11.5 28.5T800-600H560q-17 0-28.5-11.5T520-640ZM120-480v-320q0-17 11.5-28.5T160-840h240q17 0 28.5 11.5T440-800v320q0 17-11.5 28.5T400-440H160q-17 0-28.5-11.5T120-480Zm400 320v-320q0-17 11.5-28.5T560-520h240q17 0 28.5 11.5T840-480v320q0 17-11.5 28.5T800-120H560q-17 0-28.5-11.5T520-160Zm-400 0v-160q0-17 11.5-28.5T160-360h240q17 0 28.5 11.5T440-320v160q0 17-11.5 28.5T400-120H160q-17 0-28.5-11.5T120-160Zm80-360h160v-240H200v240Zm400 320h160v-240H600v240Zm0-480h160v-80H600v80ZM200-200h160v-80H200v80Zm160-320Zm240-160Zm0 240ZM360-280Z" />
+          </svg>
+          <span>Dashboard</span>
+        </a>
+      </li>
+      <li>
+        <button onclick="toggleSubMenu(this)" class="dropdown-btn">
+          <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e8eaed">
+            <path
+              d="M160-160q-33 0-56.5-23.5T80-240v-480q0-33 23.5-56.5T160-800h207q16 0 30.5 6t25.5 17l57 57h320q33 0 56.5 23.5T880-640v400q0 33-23.5 56.5T800-160H160Zm0-80h640v-400H447l-80-80H160v480Zm0 0v-480 480Zm400-160v40q0 17 11.5 28.5T600-320q17 0 28.5-11.5T640-360v-40h40q17 0 28.5-11.5T720-440q0-17-11.5-28.5T680-480h-40v-40q0-17-11.5-28.5T600-560q-17 0-28.5 11.5T560-520v40h-40q-17 0-28.5 11.5T480-440q0 17 11.5 28.5T520-400h40Z" />
+          </svg>
+          <span>Student</span>
+          <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e8eaed">
+            <path
+              d="M480-361q-8 0-15-2.5t-13-8.5L268-556q-11-11-11-28t11-28q11-11 28-11t28 11l156 156 156-156q11-11 28-11t28 11q11 11 11 28t-11 28L508-372q-6 6-13 8.5t-15 2.5Z" />
+          </svg>
+        </button>
+        <ul class="sub-menu">
+          <div>
+            <li class="active"><a href="add-student.html">Add Student</a></li>
+            <li><a href="records.html">Records</a></li>
+          </div>
+        </ul>
+      </li>
+      <li>
+        <a href="calendar.html">
+          <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e8eaed">
+            <path
+              d="M200-80q-33 0-56.5-23.5T120-160v-560q0-33 23.5-56.5T200-800h40v-40q0-17 11.5-28.5T280-880q17 0 28.5 11.5T320-840v40h320v-40q0-17 11.5-28.5T680-880q17 0 28.5 11.5T720-840v40h40q33 0 56.5 23.5T840-720v560q0 33-23.5 56.5T760-80H200Zm0-80h560v-400H200v400Zm0-480h560v-80H200v80Zm0 0v-80 80Zm280 240q-17 0-28.5-11.5T440-440q0-17 11.5-28.5T480-480q17 0 28.5 11.5T520-440q0 17-11.5 28.5T480-400Zm-160 0q-17 0-28.5-11.5T280-440q0-17 11.5-28.5T320-480q17 0 28.5 11.5T360-440q0 17-11.5 28.5T320-400Zm320 0q-17 0-28.5-11.5T600-440q0-17 11.5-28.5T640-480q17 0 28.5 11.5T680-440q0 17-11.5 28.5T640-400ZM480-240q-17 0-28.5-11.5T440-280q0-17 11.5-28.5T480-320q17 0 28.5 11.5T520-280q0 17-11.5 28.5T480-240Zm-160 0q-17 0-28.5-11.5T280-280q0-17 11.5-28.5T320-320q17 0 28.5 11.5T360-280q0 17-11.5 28.5T320-240Zm320 0q-17 0-28.5-11.5T600-280q0-17 11.5-28.5T640-320q17 0 28.5 11.5T680-280q0 17-11.5 28.5T640-240Z" />
+          </svg>
+          <span>Calendar</span>
+        </a>
+      </li>
+      <li>
+        <a href="profile.html">
+          <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e8eaed">
+            <path
+              d="M480-480q-66 0-113-47t-47-113q0-66 47-113t113-47q66 0 113 47t47 113q0 66-47 113t-113 47ZM160-240v-32q0-34 17.5-62.5T224-378q62-31 126-46.5T480-440q66 0 130 15.5T736-378q29 15 46.5 43.5T800-272v32q0 33-23.5 56.5T720-160H240q-33 0-56.5-23.5T160-240Zm80 0h480v-32q0-11-5.5-20T700-306q-54-27-109-40.5T480-360q-56 0-111 13.5T260-306q-9 5-14.5 14t-5.5 20v32Zm240-320q33 0 56.5-23.5T560-640q0-33-23.5-56.5T480-720q-33 0-56.5 23.5T400-640q0 33 23.5 56.5T480-560Zm0-80Zm0 400Z" />
+          </svg>
+          <span>Profile</span>
+        </a>
+      </li>
+    </ul>
+  </nav>
+
+  <!-- Main Content -->
+  <div class="mt-5 me-4 justify-content-center">
+    <!-- Header -->
+    <div class="d-flex justify-content-between me-3 mb-3">
+      <h1 class="heading">Registration</h1>
+      <div>
+        <svg class="me-1" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="35" height="35" viewBox="0 0 64 64">
+          <path
+            d="M 32 10 C 29.662 10 28.306672 11.604938 27.638672 13.085938 C 24.030672 13.809937 17.737984 16.956187 16.958984 24.742188 C 16.665984 29.334188 16.1185 37.883781 13.0625 39.300781 C 12.8505 39.398781 12.655234 39.533219 12.490234 39.699219 C 12.235234 39.954219 10 42.294 10 46 C 10 47.104 10.896 48 12 48 L 25.257812 48 C 25.652433 51.372928 28.522752 54 32 54 C 35.477248 54 38.347567 51.372928 38.742188 48 L 52 48 C 53.104 48 54 47.104 54 46 C 54 42.294 51.764766 39.954219 51.509766 39.699219 C 51.344766 39.534219 51.1495 39.397828 50.9375 39.298828 C 47.8825 37.881828 47.333203 29.333922 47.033203 24.669922 C 46.258203 16.945922 39.966375 13.806984 36.359375 13.083984 C 35.692375 11.603984 34.338 10 32 10 z M 32 14 C 32.603 14 32.766719 14.619859 32.886719 15.255859 C 33.063719 16.190859 33.884422 16.914062 34.857422 16.914062 C 34.931422 16.914063 42.311828 17.650047 43.048828 24.998047 C 43.557828 32.932047 44.389891 40.250797 48.837891 42.716797 C 49.024891 42.956797 49.333937 43.401 49.585938 44 L 14.414062 44 C 14.667063 43.397 14.976203 42.95375 15.158203 42.71875 C 19.609203 40.25475 20.442312 32.935313 20.945312 25.070312 C 21.688313 17.650312 29.068578 16.914062 29.142578 16.914062 C 30.099578 16.914062 30.934375 16.156391 31.109375 15.275391 C 31.232375 14.660391 31.396 14 32 14 z M 29.335938 48 L 34.664062 48 C 34.319789 49.152328 33.262739 50 32 50 C 30.737261 50 29.680211 49.152328 29.335938 48 z">
+          </path>
+        </svg>
+        <img src="../assets/images/profile.png" alt="profile" class="profile-photo rounded-circle" width="30"
+          height="30" />
+      </div>
     </div>
-    <script src="../js/app.js"></script>
-    <script
-      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
-      integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
-      crossorigin="anonymous"
-    ></script>
-  </body>
+    <!-- Path -->
+    <p class="text-muted text-end me-3 opacity-75 fw-medium mb-5">Home / Add Student</p>
+
+    <!-- Form -->
+    <div class="row">
+      <div class="col-sm-12">
+        <div class="card comman-shadow">
+          <div class="card-body">
+            <form>
+              <div class="row mb-3">
+                <div class="col-12 mb-3 mt-2">
+                  <h5 class="card-title student-info">
+                    Student Information
+                  </h5>
+                </div>
+                <div class="col-12 col-sm-4">
+                  <div class="form-group local-forms">
+                    <label>First Name <span class="text-danger">*</span></label>
+                    <input class="form-control" type="text" placeholder="Enter First Name" />
+                  </div>
+                </div>
+                <div class="col-12 col-sm-4">
+                  <div class="form-group local-forms">
+                    <label>Last Name <span class="text-danger">*</span></label>
+                    <input class="form-control" type="text" placeholder="Enter Last Name" />
+                  </div>
+                </div>
+                <div class="col-12 col-sm-4">
+                  <div class="form-group local-forms">
+                    <label>Address </label>
+                    <input class="form-control" type="text" placeholder="Enter Address" />
+                  </div>
+                </div>
+                <div class="col-12 col-sm-4">
+                  <div class="form-group local-forms calendar-icon">
+                    <label>Date Of Birth
+                      <span class="text-danger">*</span></label>
+                    <input class="form-control datetimepicker" type="date" placeholder="DD-MM-YYYY" />
+                  </div>
+                </div>
+                <div class="col-12 col-sm-4">
+                  <div class="form-group local-forms">
+                    <label>Gender <span class="text-danger">*</span></label>
+                    <select class="form-control select">
+                      <option>Select Gender</option>
+                      <option>Male</option>
+                      <option>Female</option>
+                      <option>Others</option>
+                    </select>
+                  </div>
+                </div>
+                <div class="col-12 col-sm-4">
+                  <div class="form-group local-forms">
+                    <label>Blood Group <span class="text-danger">*</span></label>
+                    <select class="form-control select">
+                      <option>Please Select Group</option>
+                      <option>A</option>
+                      <option>B</option>
+                      <option>O</option>
+                      <option>AB</option>
+                    </select>
+                  </div>
+                </div>
+                <div class="col-12 col-sm-4">
+                  <div class="form-group local-forms">
+                    <label>Phone Number <span class="text-danger">*</span></label>
+                    <input class="form-control" type="text" placeholder="Enter Phone Number" />
+                  </div>
+                </div>
+                <div class="col-12 col-sm-4">
+                  <div class="form-group local-forms">
+                    <label>E Mail <span class="text-danger">*</span></label>
+                    <input class="form-control" type="email" placeholder="example@mail.com" />
+                  </div>
+                </div>
+                <div class="col-12 col-sm-4">
+                  <div class="form-group local-forms">
+                    <label>Language <span class="login-danger">*</span></label>
+                    <select class="form-control select">
+                      <option>Please Select Language</option>
+                      <option>Sinhala</option>
+                      <option>English</option>
+                      <option>Tamil</option>
+                      <option>Other</option>
+                    </select>
+                  </div>
+                </div>
+
+                <div class="col-12"></div>
+                <h5 class="card-title student-info mb-3">
+                  Guadian Information
+                </h5>
+              </div>
+
+              <div class="row">
+                <div class="col-12 col-sm-4">
+                  <div class="form-group local-forms">
+                    <label>Guadian's Name <span class="text-danger">*</span></label>
+                    <input class="form-control" type="text" placeholder="Enter Guadian's Name" />
+                  </div>
+                </div>
+                <div class="col-12 col-sm-4">
+                  <div class="form-group local-forms">
+                    <label>Phone Number<span class="text-danger">*</span></label>
+                    <input class="form-control" type="text" placeholder="Enter Admission ID" />
+                  </div>
+                </div>
+                <div class="col-12 col-sm-4">
+                  <div class="form-group local-forms">
+                    <label>Guadian Type </label>
+                    <select class="form-control select">
+                      <option>Please Select Type</option>
+                      <option>Father</option>
+                      <option>Mother</option>
+                      <option>Other</option>
+                    </select>
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-12 col-sm-4">
+                <div class="form-group students-up-files">
+                  <h5 class="card-title mb-3">Student Photo</h5>
+                  <div class="upload">
+                    <input class="upload-file" type="file" />
+                  </div>
+                </div>
+              </div>
+              <div class="col-12 text-end">
+                <div class="student-submit">
+                  <a href="../index.html" class="btn btn-secondary me-2 rounded-3" type="reset">Cancel</a>
+                  <button type="submit" class="btn btn-primary me-4 rounded-3">
+                    Submit
+                  </button>
+                </div>
+
+              </div>
+          </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- End -->
+  </div>
+  <script src="../js/app.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+    crossorigin="anonymous"></script>
+</body>
+
 </html>
