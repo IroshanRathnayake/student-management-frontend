@@ -171,11 +171,7 @@
         >
           <div class="col-lg-4 col-md-6 col-sm-12 mb-3">
             <div class="form-group input-group">
-              <input
-                type="text"
-                class="form-control"
-                placeholder="Search Student ..."
-              />
+              <input id="searchInput" type="text" class="form-control" placeholder="Search Student..." onkeyup="searchTable()">
             </div>
           </div>
           <div class="col-lg-2 col-md-3 col-sm-12">
@@ -197,6 +193,7 @@
                 <div class="row d-flex justify-content-center">
                   <div class="col-12 text-center mb-3">
                     <img
+                      id="student-image"
                       src="../assets/images/profile-img.png"
                       alt="profile-photo"
                       width="150px"
@@ -213,7 +210,7 @@
                       </div>
                       <div class="views-personal">
                         <h4>Student ID</h4>
-                        <h5>PR24110</h5>
+                        <h5 id="student-id">N/A</h5>
                       </div>
                     </div>
                     <div class="personal-activity">
@@ -222,7 +219,7 @@
                       </div>
                       <div class="views-personal">
                         <h4>Name</h4>
-                        <h5>Saman Kumara</h5>
+                        <h5 id="student-name">N/A</h5>
                       </div>
                     </div>
                     <div class="personal-activity">
@@ -231,7 +228,7 @@
                       </div>
                       <div class="views-personal">
                         <h4>Address</h4>
-                        <h5>210, New Road, Kandy</h5>
+                        <h5 id="student-address">N/A</h5>
                       </div>
                     </div>
                     <div class="personal-activity">
@@ -240,7 +237,7 @@
                       </div>
                       <div class="views-personal">
                         <h4>Phone Number</h4>
-                        <h5>+94 776775232</h5>
+                        <h5 id="student-phone">N/A</h5>
                       </div>
                     </div>
                     <div class="personal-activity">
@@ -249,12 +246,12 @@
                       </div>
                       <div class="views-personal">
                         <h4>Email</h4>
-                        <h5>
+                        <h5 id="student-email">
                           <a
                             href=""
                             class="__cf_email__"
                             data-cfemail="81e5e0e8f2f8c1e6ece0e8edafe2eeec"
-                            >saman@gmail.com</a
+                            >N/A</a
                           >
                         </h5>
                       </div>
@@ -265,7 +262,7 @@
                       </div>
                       <div class="views-personal">
                         <h4>Gender</h4>
-                        <h5>Male</h5>
+                        <h5 id="student-gender">N/A</h5>
                       </div>
                     </div>
                     <div class="personal-activity">
@@ -274,7 +271,7 @@
                       </div>
                       <div class="views-personal">
                         <h4>Course</h4>
-                        <h5>ICD</h5>
+                        <h5 id="student-course">N/A</h5>
                       </div>
                     </div>
                     <div class="personal-activity">
@@ -285,7 +282,7 @@
                       </div>
                       <div class="views-personal">
                         <h4>Date of Birth</h4>
-                        <h5>12 Aug 2001</h5>
+                        <h5 id="student-dob">N/A</h5>
                       </div>
                     </div>
                     <div class="personal-activity">
@@ -296,7 +293,7 @@
                       </div>
                       <div class="views-personal">
                         <h4>Language</h4>
-                        <h5>English</h5>
+                        <h5 id="student-language">N/A</h5>
                       </div>
                     </div>
                     <div class="personal-activity">
@@ -307,7 +304,7 @@
                       </div>
                       <div class="views-personal">
                         <h4>Guardian Name</h4>
-                        <h5>E.G. Perera</h5>
+                        <h5 id="student-guardian">N/A</h5>
                       </div>
                     </div>
                     <div class="personal-activity">
@@ -316,7 +313,7 @@
                       </div>
                       <div class="views-personal">
                         <h4>Guardian Phone</h4>
-                        <h5>+94 712354672</h5>
+                        <h5 id="student-guardian-phone">N/A</h5>
                       </div>
                     </div>
                   </div>
@@ -335,7 +332,7 @@
               <h5 class="card-title">Records</h5>
               <div class="card-body">
                 <div class="table-responsive">
-                  <table class="table table-striped table-hover">
+                  <table class="table table-striped table-hover" id="tblStudents">
                     <thead class="table-secondary">
                       <tr>
                         <th scope="col">ID</th>
@@ -452,6 +449,7 @@
         </div>
       </div>
     </div>
+    <script src="../js/student.js"></script>
     <script src="../js/app.js"></script>
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
